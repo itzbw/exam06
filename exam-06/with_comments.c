@@ -1,13 +1,14 @@
+#include <errno.h>		// Defines macros for reporting and retrieving error conditions
+#include <string.h>		// String handling functions
+#include <unistd.h>		// Provides access to the POSIX operating system API
+#include <netdb.h>		// Definitions for network database operations
+#include <sys/socket.h> // Main headers for socket-based networking
+#include <netinet/in.h> // Constants and structures needed for internet domain addresses
+
 #include <stdio.h>		// Standard input/output definitions
 #include <stdlib.h>		// Standard library for malloc, free, exit, etc.
-#include <unistd.h>		// Provides access to the POSIX operating system API
-#include <string.h>		// String handling functions
 #include <strings.h>	// More string handling functions
-#include <netdb.h>		// Definitions for network database operations
-#include <errno.h>		// Defines macros for reporting and retrieving error conditions
-#include <sys/socket.h> // Main headers for socket-based networking
 #include <sys/select.h> // Definitions for the select function, which allows to monitor multiple file descriptors
-#include <netinet/in.h> // Constants and structures needed for internet domain addresses
 
 // Function to handle fatal errors
 void ft_error()
