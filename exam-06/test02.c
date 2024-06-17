@@ -61,9 +61,7 @@ int main (int argc, char **argv){
     old_fd = new_fd;
     if (select(size + 1, &old_fd, NULL, NULL, NULL) < 0)
       ft_error();
-    for (int id = 0; id <= size; id++){
-        if (FD_ISSET(id, &old_fd) == 0)
-          continue;
+     
         if (id == server){
           if ((client = accept(server, NULL, NULL)) < 0)
             ft_error();
@@ -73,7 +71,7 @@ int main (int argc, char **argv){
           FD_SET(client, &new_fd);
           sprintf(buff, "server: client %d just arrived\n", db[client]);
           send_all(buff, server, client, size);
-          printf("server: client %d just arrived\n", db[client]);
+          //printf("server: client %d just arrived\n", db[client]);
       }else {
         bzero(buff, 450000);
         bzero(buff2, 400000);
